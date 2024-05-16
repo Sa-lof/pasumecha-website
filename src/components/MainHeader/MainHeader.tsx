@@ -22,9 +22,7 @@ const MainHeader = () => {
         borderRadius: "20px", // Gives the card rounded corners
         overflow: "hidden", // Ensures no overflow from content
         p: 2, // Padding around the content inside the card
-        marginLeft: "4.5rem",
-        marginRight: "0.8rem",
-        marginTop: "0.8rem",
+
         objectFit: "cover",
       }}
       mb={7}

@@ -9,9 +9,7 @@ const Menu = () => {
     <Box
       sx={{
         flexGrow: 1,
-        marginLeft: "4.5rem",
-        marginRight: "0.8rem",
-        marginTop: "0.8rem",
+
       }}
       mb={7}
     >

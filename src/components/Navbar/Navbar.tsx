@@ -11,9 +11,9 @@ import {
   Stack,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import FacebookIcon from "@mui/icons-material/Facebook"; // Social media icon
-import InstagramIcon from "@mui/icons-material/Instagram"; // Social media icon
-import TwitterIcon from "@mui/icons-material/Twitter"; // Social media icon
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -27,10 +27,10 @@ const Navbar = () => {
     <div role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
         {["Menú", "Historia", "Eventos", "Contacto"].map((text, index) => (
-          <ListItem key={text} component={Link} to={"/" + text.toLowerCase()} sx={{fontWeight: "bold", fontFamily: "Poppins"}}>
-            <Typography  sx={{ color: "white", fontWeight: "bold", fontFamily: "Poppins" }}>
-              <ListItemText primary={text} sx={{ color: "white", fontWeight: "bold", fontFamily: "Poppins" }}/>
-            </Typography>
+          <ListItem key={text} component={Link} to={"/" + text.toLowerCase()} sx={{ fontFamily: "Poppins", fontWeight: "bold" }}>
+            <ListItemText primary={text} primaryTypographyProps={{
+              sx: { fontWeight: 'bold', color: 'white', fontFamily: 'Poppins' }
+            }}/>
           </ListItem>
         ))}
       </List>
@@ -107,7 +107,6 @@ const Navbar = () => {
             flexDirection: "column",
             backgroundColor: "#E3222A",
             padding: "20px",
-            
           },
         }}
       >
