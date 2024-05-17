@@ -1,33 +1,26 @@
 import React from "react";
 import { Box } from "@mui/material";
+import city from "../../assets/pasu/city.jpg";
 
 const MainHeader = () => {
-  // Using an environment variable for the image URL could be an option
-  // For example, you might have a variable REACT_APP_HEADER_IMAGE in your .env file
-  // const imageUrl = process.env.REACT_APP_HEADER_IMAGE || "https://placehold.co/600x400";
-  const imageUrl = "https://placehold.co/600x400"; // Directly using a placeholder URL for simplicity
-
   return (
     <Box
       sx={{
         position: "relative",
-        height: "70vh", // Adjust height as needed
+        height: { xs: "80vh", sm: "70vh", md: "90vh" }, // Responsive height
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url(${imageUrl})`, // Use the imageUrl variable here
+        backgroundImage: `url(${city})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        borderRadius: "20px", // Gives the card rounded corners
-        overflow: "hidden", // Ensures no overflow from content
-        p: 2, // Padding around the content inside the card
-
-        objectFit: "cover",
+        borderRadius: "20px",
+        overflow: "hidden",
+        p: { xs: 2, sm: 3, md: 4 }, // Responsive padding
       }}
-      mb={7}
-    >
-    </Box>
+      mb={3}
+    ></Box>
   );
 };
 

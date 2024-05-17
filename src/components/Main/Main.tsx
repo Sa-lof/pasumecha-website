@@ -3,6 +3,11 @@ import { Box } from "@mui/material";
 import MainHeader from "../MainHeader/MainHeader";
 import Menu from "../Menu/Menu";
 import History from "../History/History";
+import Gallery from "../Gallery/Gallery";
+import Testimonies from "../Testimonies/Testimonies";
+import Events from "../Events/Events";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 
 const Main = () => {
   return (
@@ -17,6 +22,11 @@ const Main = () => {
       <MainHeader />
       <Menu />
       <History />
+      <Gallery />
+      <Testimonies />
+      <Events />
+      <Contact />
+      <Footer />
     </Box>
   );
 };

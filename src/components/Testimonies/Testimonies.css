@@ -1,0 +1,14 @@
+.slick-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom CSS to override slick dots color */
+.slick-dots li button:before {
+  color: white; /* Sets the default state color to white */
+}
+
+.slick-dots li.slick-active button:before {
+  color: white; /* Ensures the active dot is also white */
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Card, CardContent, Typography, Button, Modal, Box } from "@mui/material";
-import yellow from "../../assets/pasu/yellow.jpeg";  // Ensure this is the correct path to your image file
+import { Typography, Button, Modal, Box } from "@mui/material";
+import yellow from "../../assets/pasu/green.jpg"; // Ensure this is the correct path to your image file
 
 const History = () => {
   const [open, setOpen] = useState(false);
@@ -9,52 +9,99 @@ const History = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <Card
+    <Box
       sx={{
-        backgroundImage: `url(${yellow})`,
-        backgroundSize: "cover",  // Cover ensures that the background image covers the entire element
-        backgroundPosition: "center",  // Centers the background image within the card
-        backgroundRepeat: "no-repeat",  // Prevents the image from repeating
-        color: "#ffffff",
         position: "relative",
-        height: "70vh",  // Adjustable based on your design requirements
-        width: "100%",  // Takes full width of the container
-        boxSizing: "border-box",
-        border: "none",
+        overflow: "hidden",
+        height: "100vh", // Adjust to ensure the image fits well
+        width: "100%",
         borderRadius: "20px",
-        objectFit: "cover"
+        marginBottom: 3,
+        "&:before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${yellow})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          zIndex: -1,
+        },
       }}
     >
-      <CardContent
+      <Box
         sx={{
-          padding: "16px",
-          backgroundColor: "rgba(0,0,0,0.4)",  // Slightly more opaque for text readability
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          height: "100%",  // Ensures the content uses the full height of the card
+          padding: { xs: 2, sm: 3, md: 4 }, // Responsive padding
+          backgroundColor: "rgba(0,0,0,0.2)", // Slightly dark background for text readability
         }}
       >
-        <Typography variant="h4" component="h2" gutterBottom sx={{ textAlign: "center", fontWeight: "bold" , fontFamily: "Poppins"}}>
+        <Typography
+          variant="h4"
+          sx={{
+            color: "white",
+            textAlign: "center",
+            fontWeight: "bold",
+            fontFamily: "Poppins",
+            fontSize: { xs: "32px", sm: "48px", md: "56px" }, // Responsive font sizes
+            mb: { xs: 2, sm: 3 }, // Responsive margin bottom
+          }}
+        >
           La historia de PASUMECHA
         </Typography>
-        <Typography sx={{ textAlign: "center", mb: 2, fontFamily: "Poppins" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        <Typography
+          variant="h4"
+          sx={{
+            color: "white",
+            textAlign: "center",
+            fontWeight: 600,
+            fontFamily: "Poppins",
+            fontSize: { xs: "20px", sm: "24px", md: "28px" }, // Responsive font sizes
+            mb: 2,
+          }}
+        >
+          La historia de PASUMECHA
+        </Typography>
+        <Typography
+          sx={{
+            color: "white",
+            textAlign: "center",
+            mb: { xs: 4, sm: 5 }, // Responsive margin bottom
+            fontFamily: "Poppins",
+            fontSize: { xs: "16px", sm: "18px", md: "20px" }, // Responsive font sizes
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          lacinia odio vitae vestibulum.
         </Typography>
         <Button
-          variant="contained"
           onClick={handleOpen}
+          variant="contained"
           sx={{
-            alignSelf: "center",
             backgroundColor: "#323D8F",
-            borderRadius: "10px",
             fontFamily: "Poppins",
-            fontWeight: "600"
+            borderRadius: "10px",
+            textTransform: "none",
+            fontWeight: 600,
+            padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" }, // Responsive padding
+            "&:hover": { backgroundColor: "#7c4dff" },
+            fontSize: { xs: "14px", sm: "16px", md: "18px" }, // Responsive font sizes
           }}
         >
           Ver video
         </Button>
-      </CardContent>
+      </Box>
 
       <Modal
         open={open}
@@ -69,26 +116,26 @@ const History = () => {
       >
         <Box
           sx={{
-            outline: "none",
             background: "white",
-            padding: 2,
             borderRadius: 2,
-            maxWidth: "90%",  // Ensures modal does not go beyond the viewport width
-            maxHeight: "90vh",  // Ensuring modal content is responsive
-            overflow: "auto",  // Adds scroll to modal if content is too large
+            padding: 2,
+            width: "90%", // Adjusted to 90%
+            maxWidth: "900px", // Max width for large screens
+            maxHeight: "90vh",
+            overflow: "auto",
           }}
         >
           <iframe
             title="PASUMECHA History Video"
-            width="100%"  // Responsive width
-            height="315"  // Fixed height; consider making it responsive
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"  // Replace with your actual video URL
+            width="100%" // Adjusted to 100%
+            height="480" // Adjust height as needed
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your actual video URL
             allow="autoplay; encrypted-media"
-            style={{ border: "none" }}  // Removes iframe border
+            style={{ border: "none" }}
           ></iframe>
         </Box>
       </Modal>
-    </Card>
+    </Box>
   );
 };
 
