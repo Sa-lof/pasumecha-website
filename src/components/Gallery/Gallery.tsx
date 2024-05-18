@@ -1,10 +1,11 @@
 import React from "react";
 import { Grid, Card, CardMedia } from "@mui/material";
+import A1 from "../../assets/gallery/A1.png";
 
 const Gallery = () => {
   // Example image URLs; replace these with your actual image URLs
   const images = [
-    "https://placeimg.com/640/480/any",
+    A1,
     "https://placeimg.com/640/480/any",
     "https://placeimg.com/640/480/any",
     "https://placeimg.com/640/480/any",
