@@ -13,6 +13,7 @@ const Events = () => {
         mb: 3,
         width: "100%", // Takes full width of its container
       }}
+      id="events"
     >
       <img
         src={red}
@@ -58,17 +59,23 @@ const Events = () => {
         <Typography
           textAlign="center"
           sx={{
-            mb: 2,
+            mb: { xs: 2, sm: 3, md: 4 }, // Responsive margin bottom
             fontFamily: "Poppins",
-            fontSize: { xs: "14px", sm: "18px", md: "24px" }, // Responsive font sizes
+            fontSize: { xs: "12px", sm: "16px", md: "18px", lg: "24px" }, // Responsive font sizes
+            px: { xs: 2, sm: 5, md: 10, lg: 20 }, // Responsive padding left and right
             fontWeight: 500,
           }}
         >
-          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-          ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+          En PASUMECHA, nos especializamos en hacer de tus eventos una
+          experiencia inolvidable. Ofrecemos un servicio de catering con los
+          sabores auténticos de Veracruz que tanto amas. Ya sea una boda,
+          cumpleaños, o reunión empresarial, nos encargamos de cada detalle para
+          que tú solo te preocupes por disfrutar.
         </Typography>
         <Button
           variant="contained"
+          href="https://calendly.com/pasumecharestaurante/30min"
+          target="_blank"
           sx={{
             backgroundColor: "#323D8F",
             fontFamily: "Poppins",

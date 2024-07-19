@@ -68,6 +68,7 @@ const Menu = () => {
         component="h4"
         mb={3}
         sx={{ fontWeight: "bold", fontFamily: "Poppins" }}
+        id="menu"
       >
         Conoce nuestro menú
       </Typography>

@@ -13,8 +13,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import { Link } from "react-router-dom";
+import { WhatsApp } from "@mui/icons-material";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -23,14 +22,35 @@ const Navbar = () => {
     setOpen(newOpen);
   };
 
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false); // Close the drawer after clicking a link
+  };
+
   const list = () => (
     <div role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
-        {["Menú", "Historia", "Eventos", "Contacto"].map((text, index) => (
-          <ListItem key={text} component={Link} to={"/" + text.toLowerCase()} sx={{ fontFamily: "Poppins", fontWeight: "bold" }}>
-            <ListItemText primary={text} primaryTypographyProps={{
-              sx: { fontWeight: 'bold', color: 'white', fontFamily: 'Poppins' }
-            }}/>
+        {[
+          { text: "Menú", id: "menu" },
+          { text: "Historia", id: "history" },
+          { text: "Eventos", id: "events" },
+          { text: "Contacto", id: "contact" }
+        ].map((item) => (
+          <ListItem
+            key={item.text}
+            button
+            onClick={() => handleScroll(item.id)}
+            sx={{ fontFamily: "Poppins", fontWeight: "bold", cursor: "pointer" }}
+          >
+            <ListItemText
+              primary={item.text}
+              primaryTypographyProps={{
+                sx: { fontWeight: 'bold', color: 'white', fontFamily: 'Poppins' }
+              }}
+            />
           </ListItem>
         ))}
       </List>
@@ -88,8 +108,8 @@ const Navbar = () => {
           <ListItem component="a" href="https://instagram.com" sx={{ width: "auto", p: 0, mb: 2 }}>
             <InstagramIcon sx={{ color: "white" }} />
           </ListItem>
-          <ListItem component="a" href="https://twitter.com" sx={{ width: "auto", p: 0 }}>
-            <TwitterIcon sx={{ color: "white" }} />
+          <ListItem component="a" href="https://wa.me/525578671227" sx={{ width: "auto", p: 0 }}>
+            <WhatsApp sx={{ color: "white" }} />
           </ListItem>
         </Stack>
       </AppBar>

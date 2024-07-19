@@ -1,39 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Pa'sumecha - Auténtica comida veracruzana. ¡Reserva tu evento y disfruta de nuestros sabores únicos!"
     />
+
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta
+      property="og:title"
+      content="Pa'sumecha - Auténtica comida veracruzana"
+    />
+    <meta
+      property="og:description"
+      content="¡Reserva tu evento y disfruta de nuestros sabores únicos! Contacta a Pa'sumecha para más información."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:url" content="https://www.pasumecha.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pa'sumecha - Auténtica comida veracruzana"
+    />
+    <meta
+      name="twitter:description"
+      content="¡Reserva tu evento y disfruta de nuestros sabores únicos! Contacta a Pa'sumecha para más información."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Restaurant",
+        "name": "Pa'sumecha",
+        "image": "%PUBLIC_URL%/og-image.jpg",
+        "@id": "https://www.pasumecha.com",
+        "url": "https://www.pasumecha.com",
+        "telephone": "+52-557-867-1227",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plaza Acuario",
+          "addressLocality": "Veracruz",
+          "addressRegion": "VER",
+          "postalCode": "91700",
+          "addressCountry": "MX"
+        },
+        "description": "Pa'sumecha - Auténtica comida veracruzana. ¡Reserva tu evento y disfruta de nuestros sabores únicos!",
+        "priceRange": "$$",
+        "servesCuisine": "Veracruzana",
+        "sameAs": [
+          "https://www.facebook.com/pasumecha",
+          "https://www.instagram.com/pasumecha",
+          "https://twitter.com/pasumecha"
+        ]
+      }
+    </script>
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <title>Pa'su Mecha</title>
+    <title>Pa'sumecha - Auténtica comida veracruzana</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- Principio del widget de globo de Calendly -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/pasumecharestaurante?primary_color=48c22d",
+          text: "Agenda una cita con PA'SUMECHA",
+          color: "#48c22d",
+          textColor: "#ffffff",
+          branding: true,
+        });
+      };
+    </script>
+    <!-- Final del widget de globo de Calendly -->
   </body>
 </html>

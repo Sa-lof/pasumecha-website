@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Box, TextField, Button, Typography } from "@mui/material";
 import darkGreen from "../../assets/pasu/dark-green.jpg"; // Ensure this is the correct path to your image file
 
 const Contact = () => {
+  const [nombre, setNombre] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [mensaje, setMensaje] = useState("");
+  const whatsappNumber = "+525545205572";
+
+  const handleSendMessage = () => {
+    const formattedMessage = `Hola! Me gustaría obtener más información sobre PA'SUMECHA.\n\nNombre: ${nombre}\nCorreo: ${correo}\nTeléfono: ${telefono}\nMensaje: ${mensaje}`;
+    const encodedMessage = encodeURIComponent(formattedMessage);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
-    <Grid container spacing={2} sx={{ height: { xs: "auto", md: "50vh" }, mb: {xs: 1, md: 3} }}>
+    <Grid
+      container
+      spacing={2}
+      sx={{ height: { xs: "auto", md: "50vh" }, mb: { xs: 1, md: 3 } }}
+      id="contact"
+    >
       <Grid item xs={12} md={7}>
         <Box
           sx={{
@@ -59,7 +77,7 @@ const Contact = () => {
                 color: "white",
                 fontFamily: "Poppins",
                 fontWeight: "bold",
-                fontSize: { xs: '1.5rem', md: '36px' }, // Responsive font size
+                fontSize: { xs: "1.5rem", md: "36px" }, // Responsive font size
               }}
             >
               Contáctanos
@@ -77,6 +95,8 @@ const Contact = () => {
                 label="Nombre"
                 variant="filled"
                 fullWidth
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
                 sx={{
                   backgroundColor: "white",
                   color: "#16A468",
@@ -87,6 +107,8 @@ const Contact = () => {
                 label="Correo"
                 variant="filled"
                 fullWidth
+                value={correo}
+                onChange={(e) => setCorreo(e.target.value)}
                 sx={{
                   backgroundColor: "white",
                   color: "#16A468",
@@ -97,6 +119,8 @@ const Contact = () => {
                 label="Número de teléfono"
                 variant="filled"
                 fullWidth
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
                 sx={{
                   backgroundColor: "white",
                   color: "#16A468",
@@ -109,6 +133,8 @@ const Contact = () => {
                 fullWidth
                 multiline
                 rows={4}
+                value={mensaje}
+                onChange={(e) => setMensaje(e.target.value)}
                 sx={{
                   backgroundColor: "white",
                   color: "#16A468",
@@ -125,6 +151,7 @@ const Contact = () => {
                   fontWeight: 600,
                   "&:hover": { bgcolor: "#6CC048" },
                 }}
+                onClick={handleSendMessage}
               >
                 Enviar
               </Button>

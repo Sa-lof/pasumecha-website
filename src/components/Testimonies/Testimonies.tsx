@@ -25,11 +25,11 @@ const Testimonies = () => {
   };
 
   const testimonials = [
-    "Testimonio 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Testimonio 2 Pellentesque ac bibendum tortor.",
-    "Testimonio 3 Sed ultrices ipsum non mattis pharetra.",
-    "Testimonio 4 Integer non ligula libero.",
-    "Testimonio 5 Maecenas fermentum ut ante at interdum.",
+    "La comida en PASUMECHA es simplemente espectacular. Los sabores auténticos de Veracruz me hicieron sentir como en casa. ¡Definitivamente volveré!",
+    "Un lugar maravilloso con un ambiente acogedor. Los mariscos frescos y el café lechero son mis favoritos. ¡Muy recomendable!",
+    "El arroz a la tumbada es el mejor que he probado. PASUMECHA preserva las tradiciones veracruzanas de una manera excepcional.",
+    "Cada visita a PASUMECHA es una experiencia única. El servicio es impecable y los platillos son de primera calidad.",
+    "Un restaurante que destaca por su autenticidad y sabor. Perfecto para disfrutar de una comida en familia o con amigos.",
   ];
 
   return (
@@ -38,6 +38,7 @@ const Testimonies = () => {
         <Card
           elevation={4}
           sx={{
+            position: "relative",
             backgroundImage: `url(${blue})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -47,12 +48,25 @@ const Testimonies = () => {
             flexGrow: 1,
             display: "flex",
             flexDirection: "column",
+            overflow: "hidden",
           }}
         >
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              zIndex: 1,
+            }}
+          ></Box>
           <CardContent
             sx={{
+              position: "relative",
+              zIndex: 2,
               flexGrow: 1,
-              backgroundColor: "rgba(0,0,0,0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -78,11 +92,17 @@ const Testimonies = () => {
                 textAlign: "center",
               }}
             >
-              Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-              ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              En PASUMECHA, nos enorgullece ofrecer una experiencia gastronómica
+              auténtica que captura la esencia de la comida veracruzana.
+              Nuestros clientes valoran no solo la calidad de nuestros
+              platillos, sino también el ambiente acogedor y el excelente
+              servicio que brindamos.
             </Typography>
+
             <Button
               variant="contained"
+              href="https://maps.app.goo.gl/Yes7oCjShGr13A4e6"
+              target="_blank"
               sx={{
                 backgroundColor: "#812F70",
                 fontFamily: "Poppins",
@@ -126,13 +146,14 @@ const Testimonies = () => {
           >
             <Slider {...settings}>
               {testimonials.map((text, index) => (
-                <Box
+                <div
                   key={index}
-                  sx={{
+                  style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     overflow: "hidden",
+
                   }}
                 >
                   <Typography
@@ -145,7 +166,7 @@ const Testimonies = () => {
                   >
                     {text}
                   </Typography>
-                </Box>
+                </div>
               ))}
             </Slider>
           </CardContent>

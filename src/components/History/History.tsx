@@ -31,6 +31,7 @@ const History = () => {
           zIndex: -1,
         },
       }}
+      id="history"
     >
       <Box
         sx={{
@@ -43,8 +44,8 @@ const History = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          padding: { xs: 2, sm: 3, md: 4 }, // Responsive padding
-          backgroundColor: "rgba(0,0,0,0.2)", // Slightly dark background for text readability
+          padding: { xs: 1, sm: 2, md: 3, lg: 4 }, // Responsive padding
+          backgroundColor: "rgba(0,0,0,0.6)", // Slightly dark background for text readability
         }}
       >
         <Typography
@@ -54,36 +55,33 @@ const History = () => {
             textAlign: "center",
             fontWeight: "bold",
             fontFamily: "Poppins",
-            fontSize: { xs: "32px", sm: "48px", md: "56px" }, // Responsive font sizes
+            fontSize: { xs: "24px", sm: "32px", md: "40px", lg: "48px" }, // Responsive font sizes
             mb: { xs: 2, sm: 3 }, // Responsive margin bottom
           }}
         >
           La historia de PASUMECHA
         </Typography>
-        <Typography
-          variant="h4"
-          sx={{
-            color: "white",
-            textAlign: "center",
-            fontWeight: 600,
-            fontFamily: "Poppins",
-            fontSize: { xs: "20px", sm: "24px", md: "28px" }, // Responsive font sizes
-            mb: 2,
-          }}
-        >
-          La historia de PASUMECHA
-        </Typography>
+
         <Typography
           sx={{
             color: "white",
             textAlign: "center",
-            mb: { xs: 4, sm: 5 }, // Responsive margin bottom
+            mb: { xs: 2, sm: 3, md: 4 }, // Responsive margin bottom
             fontFamily: "Poppins",
-            fontSize: { xs: "16px", sm: "18px", md: "20px" }, // Responsive font sizes
+            fontSize: { xs: "12px", sm: "16px", md: "18px", lg: "24px" }, // Responsive font sizes
+            px: { xs: 2, sm: 5, md: 10, lg: 20 }, // Responsive padding left and right
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          lacinia odio vitae vestibulum.
+          PASUMECHA fue fundada por Guadalupe Girón Rodríguez, quien ha estado
+          en la Plaza Acuario durante 35 años con su restaurante, preservando
+          las tradiciones de la comida típica veracruzana. Este restaurante es
+          conocido por su ambiente acogedor y la calidad de sus platillos, que
+          transportan a sus comensales a una experiencia auténtica de Veracruz.
+          Entre los platillos más destacados se encuentran el arroz a la
+          tumbada, las picadas, los mariscos frescos y el emblemático café
+          lechero. PASUMECHA se ha convertido en un punto de referencia
+          gastronómica en la región, atrayendo tanto a locales como a turistas
+          que buscan deleitarse con los sabores tradicionales de Veracruz.
         </Typography>
         <Button
           onClick={handleOpen}
@@ -96,7 +94,7 @@ const History = () => {
             fontWeight: 600,
             padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" }, // Responsive padding
             "&:hover": { backgroundColor: "#7c4dff" },
-            fontSize: { xs: "14px", sm: "16px", md: "18px" }, // Responsive font sizes
+            fontSize: { xs: "12px", sm: "14px", md: "16px", lg: "18px" }, // Responsive font sizes
           }}
         >
           Ver video
@@ -129,7 +127,7 @@ const History = () => {
             title="PASUMECHA History Video"
             width="100%" // Adjusted to 100%
             height="480" // Adjust height as needed
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your actual video URL
+            src="https://www.youtube.com/embed/imH4vh0ddDI" // Replace with your actual video URL in embed format
             allow="autoplay; encrypted-media"
             style={{ border: "none" }}
           ></iframe>

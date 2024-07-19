@@ -1,8 +1,4 @@
-.slick-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 /* Custom CSS to override slick dots color */
 .slick-dots li button:before {
